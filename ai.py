@@ -1,4 +1,4 @@
-class HeartCatAI(object):
+class WowWowAI(object):
     def __init__(self):
         # ボードの評価マップ (スコアの高い場所を優先)
         self.score_map = [
