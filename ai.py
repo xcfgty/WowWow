@@ -1,24 +1,3 @@
-class WowWowAI(object):
-    def __init__(self):
-        # ボードの評価マップ (スコアの高い場所を優先)
-        self.score_map = [
-            [100, -20, 10, 10, -20, 100],
-            [-20, -50, -2, -2, -50, -20],
-            [10, -2,  0,  0,  -2,  10],
-            [10, -2,  0,  0,  -2,  10],
-            [-20, -50, -2, -2, -50, -20],
-            [100, -20, 10, 10, -20, 100],
-        ]
-   
-    def face(self):
-        return "😻"
-
-    def evaluate_move(self, board, stone, x, y):
-        """
-        その場所に石を置いたときのスコアを評価する。
-        """
-        return self.score_map[y][x]
-
     def can_place_x_y(board, stone, x, y):
 
         if board[y][x] != 0:
@@ -40,6 +19,27 @@ class WowWowAI(object):
                 return True  # 石を置ける条件を満たす
 
         return False
+        
+class WowWowAI(object):
+    def __init__(self):
+        # ボードの評価マップ (スコアの高い場所を優先)
+        self.score_map = [
+            [100, -20, 10, 10, -20, 100],
+            [-20, -50, -2, -2, -50, -20],
+            [10, -2,  0,  0,  -2,  10],
+            [10, -2,  0,  0,  -2,  10],
+            [-20, -50, -2, -2, -50, -20],
+            [100, -20, 10, 10, -20, 100],
+        ]
+   
+    def face(self):
+        return "😻"
+
+    def evaluate_move(self, board, stone, x, y):
+        """
+        その場所に石を置いたときのスコアを評価する。
+        """
+        return self.score_map[y][x]
 
     def get_possible_moves(self, board, stone):
         """
